@@ -1,15 +1,11 @@
-alert("Шукаємо корені квадратичного рівняння за теоремою вієта");
+const arrayNum = [1, 25, 4, 8, 16, 22, 40, 30];
 
-const b = +prompt("Введіть коефіцієнт b");
-const c = +prompt("Введіть коефіцієнт c");
+const evenArray = arrayNum.filter(item => item % 2 === 0 && item);
 
-let x1 = 0;
-let x2 = 0;
+const theBiggestEvenNum = evenArray.reduce((acc, item) => item > acc ? acc = item : acc, 0);
 
-while (x1*x2 !== c && x1+x2 !== b) {
-    x1+=1;
-    x2+=1;
-    console.log(x1, x2);
-}
-
-document.querySelector('body').insertAdjacentHTML('afterbegin', `<h1>Квадратне рівняння: x^2${b > 0 ? `+${b}` : `-${b}`}x${c > 0 ? `+${c}` : `-${c}`}</h1> <h3>Корені x1: ${x1}, x2:${x2}</h3>`)
+document.querySelector('body').insertAdjacentHTML('afterbegin', `<div>
+<h1>Array of numbers: [${arrayNum}]</h1>
+<h2>Array of even numbers: [${evenArray}]</h2>
+<span>The biggest number of even array: ${theBiggestEvenNum}</span>
+</div>`)
